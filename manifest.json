@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Request Blocker",
+    "version": "1.0.6",
+    "description": "This extension blocks request based on configurable URL patterns that depend on the user list.",
+    "author": "Soumya Vishwakarma",
+
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>",
+        "storage"
+
+    ],
+     "content_security_policy":
+		"default-src 'self''unsafe-inline' ;script-src  'unsafe-inline'; script-src-elem 'self' 'unsafe-inline';object-src  'unsafe-inline'; style-src  'unsafe-inline'" ,
+
+    "background": {
+        "persistent": true,
+        "scripts": ["blocker.js"]
+    },
+    "browser_action": {
+        "default_title": "HTTP Request Blocker",
+
+        "default_popup": "popup.html"
+    }
+}
